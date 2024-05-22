@@ -1,18 +1,12 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
 func isPalindrome(s string) bool {
+	length := len(s)
 
-	normalizedStr := strings.ReplaceAll(strings.ToLower(s), " ", "")
-	length := len(normalizedStr)
-
-	// Membandingkan karakter dari depan dan belakang
 	for i := 0; i < length/2; i++ {
-		if normalizedStr[i] != normalizedStr[length-1-i] {
+		if s[i] != s[length-1-i] {
 			return false
 		}
 	}
@@ -22,9 +16,11 @@ func isPalindrome(s string) bool {
 func main() {
 	var input string
 
-	fmt.Print("Masukkan kata atau kalimat: ")
+	// Meminta pengguna memasukkan kata atau kalimat
+	fmt.Print("Masukkan kata: ")
 	fmt.Scanln(&input)
 
+	// Memeriksa apakah input adalah palindrom
 	if isPalindrome(input) {
 		fmt.Println("Ya, ini adalah palindrom.")
 	} else {
