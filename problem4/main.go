@@ -16,7 +16,6 @@ func isPalindrome(s string) bool {
 func main() {
 	var input string
 
-	// Meminta pengguna memasukkan kata atau kalimat
 	fmt.Print("Masukkan kata: ")
 	fmt.Scanln(&input)
 
